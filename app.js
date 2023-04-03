@@ -22,7 +22,7 @@ for (let buttonItem of buttonItems) {
     });
 }
 Telegram.WebApp.onEvent('mainButtonClicked', function () {
-    tg.sendData("some string that we need to send");
+    tg.sendData(item);
     //при клике на основную кнопку отправляем данные в строковом виде
 });
 
