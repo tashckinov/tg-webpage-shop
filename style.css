@@ -9,12 +9,17 @@ body {
 
 .container {
     max-width: 390px;
+    overflow: hidden;
 }
 
 .inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 235px 235px 235px;
+    /* display: grid; */
+    /* grid-template-columns: 1fr 1fr; */
+    /* grid-template-rows: 235px 235px 235px; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 15px;
 }
 
 .img {
@@ -24,11 +29,23 @@ body {
 
 .item {
     text-align: center;
+    position: relative;
 }
 
 .item p {
     margin: 6px 0;
     font-weight: 500;
+}
+
+.counter {
+    position: absolute;
+    right: 0;
+    margin: 5px;
+    background: #f8a818;
+    padding: 4px 8px;
+    border-radius: 15px;
+    font-weight: 500;
+    color: #fff;
 }
 
 .btn {
