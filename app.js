@@ -84,6 +84,14 @@ Vue.createApp({
             if (this.cart) {
                 tg.MainButton.show();
             }
+        },
+        del(id) {
+            if (this.cart[id] > 0) {
+                this.cart[id] -= 1
+            }
+            if (!this.cart) {
+                tg.MainButton.hide();
+            }
         }
     }
 }).mount('.container')

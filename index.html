@@ -20,7 +20,11 @@
             <div class="counter" v-if="cart[item.id]">{{ cart[item.id] }}</div>
             <img src="img/serenity.png" alt="Serenity" class="img">
             <p>{{ item.name }} · {{ item.price }}₽</p>
-            <button class="btn" v-on:click="add(item.id)">Добавить</button>
+            <button class="btn" v-on:click="add(item.id)" v-if="!cart[item.id]">Добавить</button>
+            <section v-if="cart[item.id]">
+                <button class="btn" v-on:click="add(item.id)">+</button>
+                <button class="btn" v-on:click="del(item.id)">-</button>
+            </section>
         </div>
 
     </div>
