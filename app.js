@@ -89,7 +89,12 @@ Vue.createApp({
             if (this.cart[id] > 0) {
                 this.cart[id] -= 1
             }
-            if (!this.cart) {
+            let sum = 0;
+            for (i in this.cart) {
+                sum += this.cart[i];
+            }
+            console.log(sum)
+            if (sum <= 0) {
                 tg.MainButton.hide();
             }
         }
