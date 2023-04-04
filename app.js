@@ -93,8 +93,8 @@ Vue.createApp({
             for (i in this.cart) {
                 sum += this.cart[i];
             }
-            console.log(sum)
             if (sum <= 0) {
+                tg.sendData("кнопка скрыта");
                 tg.MainButton.hide();
             }
         }
