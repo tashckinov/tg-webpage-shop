@@ -57,6 +57,7 @@ Telegram.WebApp.onEvent('mainButtonClicked', function () {
 Vue.createApp({
     data() {
         return {
+            check: 0,
             catalog: [{
                 id: 1, name: "Serenity", price: 400
             }, {
@@ -71,19 +72,18 @@ Vue.createApp({
                 id: 6, name: "Serenity", price: 400
             }], cart: {}
         }
-    }, methods: {
+    },
+    methods: {
         add(id) {
             if (!this.cart[id]) {
                 this.cart[id] = 1
             } else {
                 this.cart[id] += 1
             }
-        }
-    },
-    computed: {
-        // геттер вычисляемого свойства
-        DoneButton() {
-            return this.cart ? tg.MainButton.show() : tg.MainButton.hide();
+            this.check += 1
+            if (this.cart) {
+                tg.MainButton.show();
+            }
         }
     }
 }).mount('.container')
